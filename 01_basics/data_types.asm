@@ -4,7 +4,8 @@
 ; Link it:              ld data_types.o -o data_types
 ; Run the file          ./data_types
 
-section .data
+section .data 
+;for declaring variables
     ; Basic integer types
     myByte   db  0x41            ; 1 byte
     myWord   dw  0x4243          ; 2 bytes
@@ -15,18 +16,20 @@ section .data
     myString db "Hello", 0
 
 section .bss
+;declare uninitialized variables
     ; Uninitialized data - allocated by OS
     buffer   resb 64             ; Reserve 64 bytes
 
 section .text
+;actual code to be run
     global _start
 
 _start:
     ; Load different data types into registers
-    mov al, [myByte]     ; 1 byte into AL
-    mov ax, [myWord]     ; 2 bytes into AX
-    mov eax, [myDword]   ; 4 bytes into EAX
-    mov rax, [myQword]   ; 8 bytes into RAX
+    mov al, [myByte]     ; 1 byte into AL, 8 bits
+    mov ax, [myWord]     ; 2 bytes into AX, 16 bits
+    mov eax, [myDword]   ; 4 bytes into EAX, 32 bits
+    mov rax, [myQword]   ; 8 bytes into RAX, 64 bits
 
     ; Exit(0)
     mov rax, 60

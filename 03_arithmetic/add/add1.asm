@@ -1,7 +1,7 @@
 ; add8.asm
 section .data
     num1 db 120   ; 01111000b
-  ;  num2 db 10    ; 00001010b
+    num2 db 10    ; 00001010b
     result db 0
 
 section .text
@@ -30,3 +30,4 @@ _start:
 ; SF - set if MSB is 1 (Bit 7)
 ; OF - Set if the signed result is out of range.
 ;      Signed 8-bit: range = -128 to +127.
+;      Unsigned 8-bit 255

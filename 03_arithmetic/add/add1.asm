@@ -1,7 +1,7 @@
 ; add8.asm
 section .data
     num1 db 120   ; 01111000b
-    num2 db 10    ; 00001010b
+  ;  num2 db 10    ; 00001010b
     result db 0
 
 section .text
@@ -9,11 +9,12 @@ section .text
 
 _start:
 
-    ; add [num1], [num2]
+     ;add [num1], [num2] 
+     ;// you cannot add from memory to memory, only through a register or immediate value
 
     mov al, [num1]
-    add al, [num2]       ; al = num1 + num2        10000010
-    mov [result], al
+    add al, 20     ; al = num1 + num2        10000010
+    mov [result] ,al
 
 
     

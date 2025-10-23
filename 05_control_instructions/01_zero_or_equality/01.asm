@@ -1,11 +1,13 @@
 ; jump if equal 
 
 section .data
-    msg_equal db "AX == BX (Equal, ZF=1)",10,0
+    msg_equal db "AX == BX (Equal, ZF=1 : Joan Gichana - 153356)",10,0
     len_equal equ $ - msg_equal 
+
     ;10 decimal / 0x0A hex - newline character to move cursor to the next line after printing
     ;0 - null terminator
-    msg_not_equal db "AX != BX (Not Equal, ZF=0)",10,0
+
+    msg_not_equal db "AX != BX (Not Equal, ZF=0 : Joan Gichana - 153356)",10,0
     len_not_equal equ $ - msg_not_equal
 
 section .text
@@ -25,10 +27,11 @@ _start:
 equal:
     mov ecx, msg_equal ; ecx = pointer to message
 
+
 print:
     mov eax,4   ; syscall number for sys_write
     mov ebx,1   ; file descriptor (1 = stdout)
-    mov edx,30  ; length of the message to be printed
+    mov edx,48 ; length of the message to be printed
     int 0x80    ;interrupt to invoke the call
 
     mov eax,1

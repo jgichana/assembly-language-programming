@@ -1,8 +1,8 @@
 ; JB / JNAE → Jump if Below
 
 section .data
-    str_below     db "AX < BX (Below)",10,0
-    str_not_below db "AX >= BX (Not Below)",10,0
+    str_below     db "AX < BX (Below) Joan Gichana - 153356",10,0
+    str_not_below db "AX >= BX (Not Below). Joan Gichana - 153356 ",10,0
 
 section .text
     global _start
@@ -21,7 +21,7 @@ below:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,30
+    mov edx,50
     int 0x80
 
     mov eax,1

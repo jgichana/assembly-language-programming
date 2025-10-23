@@ -1,7 +1,7 @@
 ; simple loop
 
 section .data
-    str_msg db "Hello from LOOP!", 10
+    str_msg db "Hello from LOOP!", 10 ; the 10 refers to 
     len equ $ - str_msg
 
 section .text
@@ -10,6 +10,7 @@ section .text
 _start:
     mov ecx, 5              ; loop counter
 
+_loop:
 print_loop:
     mov eax, 4              
     mov ebx, 1              
